@@ -81,6 +81,7 @@ module VCR
     end
 
     def should_use_subprocess?
+      return true
       # Patron times out when the server is running in a separate thread in the same process,
       # so use a separate process.
       # In all other cases, we can use a thread (it's faster!)
