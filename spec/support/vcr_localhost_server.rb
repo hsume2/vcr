@@ -84,7 +84,7 @@ module VCR
       # Patron times out when the server is running in a separate thread in the same process,
       # so use a separate process.
       # In all other cases, we can use a thread (it's faster!)
-      defined?(Patron)
+      defined?(Patron) || defined?(Typhoeus)
     end
 
     def wait_until(timeout, error_message, &block)
